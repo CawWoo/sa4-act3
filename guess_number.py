@@ -11,8 +11,10 @@ while guess != number:
 
     guess = int(guess)
     
-    if guess != number:
-        guess = (input('Nope! Try again! '))
+    if guess < number:
+        guess = (input('Too low. Try again: '))
+    elif guess > number: 
+        guess = (input('Too high. Try again: '))
     else:
         print("Congratulations! You guessed the right number.")
         break
