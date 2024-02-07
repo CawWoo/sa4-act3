@@ -15,14 +15,18 @@ while guess != number and tries != 0:
     guess = int(guess)
     
     if guess != number:
-        guess = (input('Nope! Try again! '))
+        if guess < number:
+            guess = (input('Too low. Try again: '))
+        elif guess > number: 
+            guess = (input('Too high. Try again: '))        
         tries -= 1
         print(f'You have {tries} guesses left')
 
-    if guess == number:
+    elif guess == number:
         print("Congratulations! You guessed the right number.")
 
-print(f'Sorry, you ran out of tries. The number was {number}')
+if tries == 0:  
+    print(f'Sorry, you ran out of tries. The number was {number}')
 
 
     
